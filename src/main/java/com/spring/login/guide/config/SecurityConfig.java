@@ -24,6 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// TODO Auto-generated method stub
 		http.authorizeRequests()
 			.antMatchers("/h2-console/**").permitAll()	
+			.antMatchers("/join", "/create").permitAll()	
 			.antMatchers("/").authenticated()
 			.and()
 			.csrf().ignoringAntMatchers("/h2-console/**")
@@ -33,8 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
 		.formLogin()
 			.loginPage("/login")
+			.loginProcessingUrl("/login")
 			.defaultSuccessUrl("/")
-			.failureUrl("/")
+			.failureUrl("/login")
 			.and()
 		.logout()
 			.permitAll()

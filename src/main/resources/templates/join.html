@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Join</title>
+</head>
+<body>
+	<form action="/create" method="POST" th:action="@{/create}">
+		<label>username</label>
+		<input type="text" name="username" /> <br/>
+		<label>password</label>
+		<input type="password" name="password" /> <br/>
+		<label>age</label>
+		<input type="text" name="age" /> <br/>
+		<input type="submit" value="join" />
+	</form>
+</body>
+</html>
